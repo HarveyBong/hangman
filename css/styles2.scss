@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+*{
+    font-family: 'Work Sans', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+    justify-content:center;
+    min-height:100vh;
+    background: #2b5876;  /* fallback for old browsers */
+    background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.container{
+    width:850px;
+    
+    background:rgb(255, 255, 255);
+    display:flex;
+    gap:70px;
+    align-items:flex-end;
+    padding: 60px 40px;
+    border-radius: 10px;
+    
+    box-shadow: 4px 4px 8px black
+}
+.hangman-box{
+    img{
+        background-color: #5c8dad;
+        max-width:270px;
+        
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #2b5876;
+    }
+    h1{
+    font-size:1.45rem;
+    margin-top:20px;
+    text-align:center;
+    text-transform:uppercase;
+}
+}
+
+.word-display{
+    display:flex;
+    gap: 10px;
+    list-style:none;
+    align-items: center;
+    justify-content: center;
+
+
+    .letter{
+        width:28px;
+        margin-bottom:40px;
+        border-bottom: 3px solid black;
+        font-size:2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align:center;
+
+       
+    }
+    .letter.guessed{
+
+            border-color:transparent;
+            margin:-40px 0 35px;
+       
+    }
+}
+
+.game-box {
+    h4{
+        
+        text-align:center;
+        font-size:1.1rem;
+        font-weight: 500;
+        margin-bottom:15px;
+    }
+ b{
+    font-weight:600;
+ }
+ .guesses-text b{
+    color:red
+ }
+ .keyboard button[disabled]{
+    opacity:0.6;
+    pointer-events: none;
+}
+
+ .keyboard {
+display:flex;
+gap:5px;
+margin-top: 40px;
+flex-wrap:wrap;
+justify-content:center;
+ button{
+
+        color:rgb(250, 250, 250);
+        font-size:1rem;
+        font-weight:600;
+        cursor:pointer;
+        outline:none;
+        padding:7px;
+        border:none;
+
+        background:#2b5876;
+        border-radius:4px;
+        text-transform:uppercase;
+
+        width:calc(100% / 9 - 5px);
+
+        [disabled]{
+            opacity:0.6;
+            pointer-events: none;
+        }
+     }
+
+     :hover{
+        background-color:#4e4376;
+        }
+ }
+}
+
+.modelbox.show{
+    opacity:1;
+    pointer-events:auto;
+
+}
+
+
+.modelbox{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    opacity:0;
+    padding:0 10px;
+    pointer-events: none;
+    z-index:999;
+    align-items:center;
+    justify-content: center;
+    background:rgba(0, 0, 0, 0.623);
+    transition: opacity 0.4s ease;
+    img{
+        max-width: 130px;
+        margin-bottom:20px;
+    }
+    
+    .content{
+        background:white;
+        max-width: 420px;
+        width:100%;
+        text-align: center;
+        border-radius: 10px;
+        padding:30px;
+
+    }
+    h4{
+        font-size:1.54rem;
+    }
+    p{
+        font-size:1.15rem;
+        margin:15px 0 30px;
+        font-weight: 500;
+    }
+    b{
+        color:red;
+    }
+
+    button{
+        padding:12px 23px;
+    
+    }
+
+}
+
+
+
+@media (max-width: 782px){
+.container{
+    flex-direction: column;
+    align-items: center;
+    padding:30px 15px;
+}
+.hangman-box{
+    img{max-width: 200px;}
+    h1{display:none;}
+}
+
+}
